@@ -1,0 +1,38 @@
+{
+  "name": "@teampanfu/phaser-cachebuster",
+  "version": "1.0.0",
+  "description": "A simple Phaser Loader plugin to cachebust loaded files",
+  "keywords": [
+    "cache",
+    "busting",
+    "loader",
+    "phaser",
+    "plugin"
+  ],
+  "homepage": "https://github.com/teampanfu/phaser-cachebuster#readme",
+  "bugs": {
+    "url": "https://github.com/teampanfu/phaser-cachebuster/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teampanfu/phaser-cachebuster.git"
+  },
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve"
+  },
+  "author": "Robin <robin@panfu.us>",
+  "license": "MIT",
+  "main": "./dist/cachebuster.min.js",
+  "dependencies": {
+    "phaser": "3.10.x"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.5",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  }
+}
