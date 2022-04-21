@@ -5,8 +5,14 @@ export default class CacheBustedLoaderPlugin extends Phaser.Loader.LoaderPlugin 
     }
 
     addFile(file) {
+        if (!Array.isArray(file)) {
+            file = [file]
+        }
+
         if (this.cacheBuster) {
-            file.url += '?v=' + this.cacheBuster
+            file.forEach(item => {
+                item.url += '?v=' + this.cacheBuster
+            })
         }
 
         super.addFile(file)
