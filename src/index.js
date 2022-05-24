@@ -1,7 +1,16 @@
+let cacheBuster = ''
+
 export default class CacheBustedLoaderPlugin extends Phaser.Loader.LoaderPlugin {
     constructor(scene) {
         super(scene)
-        this.cacheBuster = null
+    }
+
+    get cacheBuster() {
+        return cacheBuster
+    }
+
+    set cacheBuster(version) {
+        cacheBuster = version
     }
 
     addFile(file) {
@@ -9,9 +18,9 @@ export default class CacheBustedLoaderPlugin extends Phaser.Loader.LoaderPlugin 
             file = [file]
         }
 
-        if (this.cacheBuster) {
+        if (cacheBuster) {
             file.forEach(item => {
-                item.url += '?v=' + this.cacheBuster
+                item.url += '?v=' + cacheBuster
             })
         }
 
